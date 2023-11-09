@@ -56,11 +56,8 @@ jobs:
       - node/install:
           node-version: '14.15'
       - aws-cli/setup
-      - run: |
-          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-      - eb/setup
       - checkout
+      - eb/setup
       - run:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
